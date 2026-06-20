@@ -1,24 +1,174 @@
 body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    font-family:Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 700px;
+}
+
+#heading-1{
+    margin: 0 0 20px 0;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .search-container{
-    display:flex;
-    gap:10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.search-box{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 540px;
 }
 
 input{
-    padding:10px;
-    width:250px;
-    font-size:16px;
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    outline: none;
+    min-width: 0;
+}
+
+input:focus{
+    border-color: #555;
 }
 
 button{
-    padding:10px 20px;
-    font-size:16px;
-    cursor:pointer;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: white;
+    white-space: nowrap;
+}
+
+button:hover{
+    background-color: #e6e6e6;
+}
+
+button:disabled{
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+#status{
+    font-size: 15px;
+    color: #555;
+    min-height: 20px;
+    text-align: center;
+}
+
+#status.error{
+    color: #c0392b;
+    font-weight: bold;
+}
+
+.hidden{
+    display: none !important;
+}
+
+/* Profile card */
+.profile-card{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.profile-card img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.profile-info h2{
+    margin: 0 0 4px 0;
+    font-size: 20px;
+}
+
+.profile-info a{
+    color: #0366d6;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.profile-info a:hover{
+    text-decoration: underline;
+}
+
+/* Repo list */
+.repo-list{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.repo-card{
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-sizing: border-box;
+}
+
+.repo-card h3{
+    margin: 0 0 6px 0;
+    font-size: 18px;
+}
+
+.repo-card h3 a{
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.repo-card h3 a:hover{
+    text-decoration: underline;
+}
+
+.repo-card p{
+    margin: 0 0 10px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.repo-meta{
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+    color: #666;
+    flex-wrap: wrap;
+}
+
+.repo-meta span{
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
