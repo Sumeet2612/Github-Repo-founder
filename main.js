@@ -1,8 +1,11 @@
 const text = document.getElementById("username");
 const button = document.getElementById("search-btn");
 const status = document.getElementById("status");
+const clear = document.getElementById("clear-btn");
 const profilecard = document.getElementById("profile-card");
 const repolist = document.getElementById("repo-list");
+
+
 
 
 button.addEventListener("click" , handleSearch);
@@ -42,13 +45,30 @@ async function handleSearch() {
                 <img src="${data.avatar_url}" alt="avatar"></img>
                 <div class = "profile-info">
                     <h2> ${data.name}</h2>
-                    <p>${data.bio}</p>
+                    <p>${data.bio || " "}</p>
                     <a href = "${data.html_url}" target="_blank"> View Profile </a>
                 </div>
                 `;
+            const endPoint = await fetch("https://api.github.com/users/" + username + "/repos?sort=updated&per_page=10");
+            const endData = await endPoint.json();
+            console.log(endData);
+
+            repolist.innerHTML="";
+            endData.forEach(repo => {
+                repolist.innerHTML += `
+                <div class= "repo-card">
+                    <h3><a href = "${repo.html_url}" target="_blank">${repo.name}</a></h3>
+                    <p>${repo.description || "No Description"}</p>
+                    <div class = "repo-meta">
+                        <span>⭐ ${repo.stargazers_count} </span>
+                        <span>🍴 ${repo.forks_count} </span>
+                        <span>💻 ${repo.language || "Unknown"} </span>
+                    </div>
+                </div>
+                `;
+            });
         }
         button.disabled = false ;
-
     }
 } 
     
