@@ -159,6 +159,12 @@ button:disabled{
     font-size: 14px;
 }
 
+#search-bar{
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
 .repo-meta{
     display: flex;
     gap: 16px;
