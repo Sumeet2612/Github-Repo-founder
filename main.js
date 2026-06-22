@@ -13,6 +13,9 @@ text.addEventListener("keydown" , function(e){
 })
 
 function handleSearch() {
+    if(text.value.trim === " "){
+        status.textContent("Enter the username");
+    }
     
     
 }
