@@ -38,7 +38,7 @@ async function handleSearch() {
         button.disabled = true ;
         const response = await fetch("https://api.github.com/users/" + username);
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         
         if (!response.ok){
             status.classList.add("error")
