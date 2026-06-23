@@ -1,4 +1,8 @@
-body{
+* {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
     min-height: 100vh;
     display: flex;
@@ -6,10 +10,9 @@ body{
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     padding: 60px 20px;
-    box-sizing: border-box;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,78 +21,115 @@ body{
     max-width: 700px;
 }
 
-#heading-1{
+#heading-1 {
     margin: 0 0 20px 0;
     font-size: 48px;
     font-weight: bold;
     text-align: center;
 }
 
-.search-container{
+.search-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-.search-box{
+.search-box {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 10px;
     width: 100%;
     max-width: 540px;
 }
 
-input{
+.input-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     flex: 1;
-    padding: 12px;
-    font-size: 16px;
     border: 1px solid #999;
     border-radius: 6px;
+    background: white;
+    padding-right: 4px;
+}
+
+.input-wrapper input {
+    flex: 1;
+    border: none;
     outline: none;
+    padding: 12px;
+    font-size: 16px;
+    background: transparent;
     min-width: 0;
 }
 
-input:focus{
+.input-wrapper:focus-within {
     border-color: #555;
 }
 
-button{
-    padding: 12px 20px;
+#clear-btn {
+    border: none;
+    background: transparent;
+    color: #999;
     font-size: 16px;
-    border: 1px solid #999;
-    border-radius: 6px;
+    padding: 0 8px;
     cursor: pointer;
-    background-color: white;
-    white-space: nowrap;
+    flex-shrink: 0;
+    line-height: 1;
 }
 
-button:hover{
+#clear-btn:hover {
+    color: #333;
+}
+
+#search-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid #999;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+#search-btn:hover {
     background-color: #e6e6e6;
 }
 
-button:disabled{
+#search-btn:disabled {
     cursor: not-allowed;
     opacity: 0.6;
 }
 
-#status{
+#search-bar {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+#status {
     font-size: 15px;
     color: #555;
     min-height: 20px;
     text-align: center;
 }
 
-#status.error{
+#status.error {
     color: #c0392b;
     font-weight: bold;
 }
 
-.hidden{
+.hidden {
     display: none !important;
 }
 
-/* Profile card */
-.profile-card{
+.profile-card {
     display: flex;
     align-items: center;
     gap: 16px;
@@ -98,74 +138,71 @@ button:disabled{
     border-radius: 8px;
     padding: 16px 20px;
     width: 100%;
-    box-sizing: border-box;
 }
 
-.profile-card img{
+.profile-card img {
     width: 64px;
     height: 64px;
     border-radius: 50%;
     flex-shrink: 0;
 }
 
-.profile-info h2{
+.profile-info h2 {
     margin: 0 0 4px 0;
     font-size: 20px;
 }
 
-.profile-info a{
+.profile-info p {
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.profile-info a {
     color: #0366d6;
     text-decoration: none;
     font-size: 14px;
 }
 
-.profile-info a:hover{
+.profile-info a:hover {
     text-decoration: underline;
 }
 
-/* Repo list */
-.repo-list{
+.repo-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
     width: 100%;
 }
 
-.repo-card{
+.repo-card {
     background: white;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 16px 20px;
-    box-sizing: border-box;
 }
 
-.repo-card h3{
+.repo-card h3 {
     margin: 0 0 6px 0;
     font-size: 18px;
 }
 
-.repo-card h3 a{
+.repo-card h3 a {
     color: #0366d6;
     text-decoration: none;
 }
 
-.repo-card h3 a:hover{
+.repo-card h3 a:hover {
     text-decoration: underline;
 }
 
-.repo-card p{
+.repo-card p {
     margin: 0 0 10px 0;
     color: #555;
     font-size: 14px;
 }
 
-#search-bar{
-    width: 18px;
-    height: 18px;
-    display: block;
-}
-
-.repo-meta{
+.repo-meta {
     display: flex;
     gap: 16px;
     font-size: 13px;
@@ -173,7 +210,7 @@ button:disabled{
     flex-wrap: wrap;
 }
 
-.repo-meta span{
+.repo-meta span {
     display: flex;
     align-items: center;
     gap: 4px;

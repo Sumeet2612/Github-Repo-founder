@@ -12,16 +12,18 @@
         <div class="search-container">
             <h1 id="heading-1">GITHUB REPO FINDER</h1>
             <div class="search-box">
-                <input type="text" id="username" placeholder="Search by Username"> 
-                <button id="clear-btn">✕</button>
-                <button id="search-btn"><img src="search.jpg" alt="Search-button" id="search-bar"></button>
+                <div class="input-wrapper">
+                    <input type="text" id="username" placeholder="Search by Username">
+                    <button id="clear-btn">✕</button>
+                </div>
+                <button id="search-btn">
+                    <img src="search.jpg" alt="Search" id="search-bar">
+                </button>
             </div>
         </div>
 
         <div id="status"></div>
-
         <div id="profile-card" class="profile-card hidden"></div>
-
         <div id="repo-list" class="repo-list"></div>
     </div>
 

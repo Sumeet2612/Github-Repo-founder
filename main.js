@@ -6,6 +6,13 @@ const profilecard = document.getElementById("profile-card");
 const repolist = document.getElementById("repo-list");
 
 
+clear.addEventListener("click" , function(){
+    text.value = "";
+    status.textContent ="";
+    status.classList.remove("error");
+    profilecard.classList.add("hidden");
+    repolist.innerHTML = " ";
+});
 
 
 button.addEventListener("click" , handleSearch);
@@ -51,7 +58,7 @@ async function handleSearch() {
                 `;
             const endPoint = await fetch("https://api.github.com/users/" + username + "/repos?sort=updated&per_page=10");
             const endData = await endPoint.json();
-            console.log(endData);
+            // console.log(endData);
 
             repolist.innerHTML="";
             endData.forEach(repo => {
